@@ -29,3 +29,64 @@ Missing or unavailable values are safely marked as `N/A`.
 ---
 
 ## Project Structure
+
+├── invoices_2025/ # Input folder containing PDF invoices
+├── comprehensive_invoices_updated.csv # Output file
+├── invoice_parser.py # Main Python script
+├── README.md
+├── .gitignore
+
+
+---
+
+## Technologies Used
+- Python
+- pdfplumber
+- pandas
+- regex (re)
+- datetime
+- os
+
+*(Optional OCR support can be added using `pdf2image` and `pytesseract` for scanned PDFs.)*
+
+---
+
+## How It Works
+1. Reads all PDF files from the input directory
+2. Extracts raw text from each PDF
+3. Applies regex-based parsing for invoice fields
+4. Normalizes date formats where possible
+5. Aggregates results into a CSV file
+
+---
+
+## Usage
+1. Place all invoice PDFs inside the `invoices_2025` folder
+2. Run the script:
+   ```bash
+   python invoice_parser.py
+The output CSV will be generated in the project root
+
+Limitations
+
+Current version supports digital PDFs only
+
+Scanned invoices require OCR integration
+
+Date normalization supports common formats
+
+Future Enhancements
+
+OCR fallback for scanned documents
+
+Currency detection
+
+Vendor name extraction
+
+Logging and error reports
+
+CLI argument support
+
+Author
+
+Developed as a practical automation project to demonstrate Python scripting, text parsing, and data extraction workflows.
